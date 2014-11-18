@@ -9,8 +9,15 @@
 
 include_recipe 'curl'
 
-template '/tmp/test.ctmpl' do
-  source 'test.ctmpl.erb'
+consul_template_config 'test' do
+    templates [{
+      source: '/tmp/test.config.ctmpl',
+      destination: '/tmp/test.config'
+   }]
+end
+
+template '/tmp/test.config.ctmpl' do
+  source 'test.config.ctmpl.erb'
 end
 
 execute 'add test key/value' do

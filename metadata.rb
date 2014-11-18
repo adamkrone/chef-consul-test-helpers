@@ -7,3 +7,4 @@ long_description 'Installs/Configures consul-test-helpers'
 version          '0.1.0'
 
 depends 'curl'
+depends 'consul-template'

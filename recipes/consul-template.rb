@@ -12,7 +12,8 @@ include_recipe 'curl'
 consul_template_config 'test' do
     templates [{
       source: '/tmp/test.config.ctmpl',
-      destination: '/tmp/test.config'
+      destination: '/tmp/test.config',
+      command: 'touch /tmp/consul-template-command-test'
    }]
 end
 
